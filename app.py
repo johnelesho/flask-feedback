@@ -3,14 +3,14 @@ from flask_sqlalchemy import SQLAlchemy
 from send_mail import send_mail
 
 app = Flask(__name__)
-ENV = 'dev'
+ENV = 'prod'
 
 if ENV == 'dev':
     app.debug=True
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:grace4all@localhost/flask-feedback'
 else:
     app.debug = False
-    app.config['SQLALCHEMY_DATABASE_URI'] = ''
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://laplfudskibrtq:3ddcc11ccea6fbf01dd006f1376c4d2d024a96ed86bd1423901d40297131466b@ec2-54-196-89-124.compute-1.amazonaws.com:5432/dcl7g5gd67e2li'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
